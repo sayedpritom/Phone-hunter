@@ -1,10 +1,16 @@
-document.getElementById("search-btn").addEventListener("click", () => showAllResults())
+const spinner = document.getElementById("spinner");
+
+document.getElementById("search-btn").addEventListener("click", () => {
+    spinner.style.display = "inline-block";
+    showAllResults()
+})
 
 const showAllResults = (isTwenty = true) => {
     const detailsSection = document.getElementById("detailsSection");
     detailsSection.innerHTML = '';
-    
-    const input = document.getElementById("input").value;
+
+    // Make input in small laterr
+    let input = document.getElementById("input").value.toLowerCase();
     const cards = document.getElementById("cards");
 
 
@@ -38,14 +44,17 @@ const showAllResults = (isTwenty = true) => {
                 showAllBtn.setAttribute('onclick', "showAllResults(false)")
                 cards.appendChild(showAllBtn);
                 // showAllBtn.addEventListener('click', () => showAllResults(false));
+                spinner.style.display = "none";
             } else {
                 const card = document.createElement('div');
                 card.innerHTML = `
-                    <h3>Result not found! Please search something else.</h3>
+                <h3>Result not found! Please search something else.</h3>
                 `;
                 cards.appendChild(card)
+                spinner.style.display = "none";
             }
         })
+
 }
 
 

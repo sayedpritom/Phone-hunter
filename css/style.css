@@ -1,3 +1,6 @@
 #search-btn {
     height: 100%;
 }
+#spinner {
+    display: none;
+}
