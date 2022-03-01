@@ -1,4 +1,4 @@
-search box, button
+ search box, button
 if result // result || show no phone found
 use card(image, model, brand) 
 more info btn in card(show details in between search box & cards, image, name & below release date || nor release date found , + 6 more phone specs ) 
@@ -16,5 +16,9 @@ show other others info
 show max 20 search results(show all button {optional})
 spinner(optional)
 case insensitive search(optional)
+
+
+---------------------
+others
 
  

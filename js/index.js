@@ -64,30 +64,48 @@ const showDetails = (slug) => {
     fetch(`https://openapi.programming-hero.com/api/phone/${slug}`)
         .then((response) => response.json())
         .then(result => {
+            const sensors = [...result.data.mainFeatures.sensors];
+            const others = result.data.others;
+            // console.log(result.data.others);
+            console.log(others);
+
             const details = document.createElement("div");
             details.classList.add("row");
 
             details.innerHTML = `
-        <div class="col-12 col-md-6"><img class="img-fluid" src=${result.data.image} alt=""></div> 
+        <div class="col-12 col-md-6 my-2"><img id="detailsSectionImage" src=${result.data.image} alt=""></div> 
         <div class="col-12 col-md-6">
             <h3>Model: ${result.data.name}</h3> 
             <p>Release Date: ${result.data.releaseDate ? result.data.releaseDate : "No release date found"}</p>
             <p>Storage: ${result.data.mainFeatures.storage}</p>
             <p>Display: ${result.data.mainFeatures.displaySize}</p>
             <p>Chipset: ${result.data.mainFeatures.chipSet}</p>
-            <p><b>Sensors</b>: 
-                ${result.data.mainFeatures.sensors[0]},
-                ${result.data.mainFeatures.sensors[1]},
-                ${result.data.mainFeatures.sensors[2]},
-                ${result.data.mainFeatures.sensors[3]},
-                ${result.data.mainFeatures.sensors[4]},
-                ${result.data.mainFeatures.sensors[5]}
-            </p>
+            <p id="sensors"><b>Sensors: </b></p>
+            <p id="others"><b>Others: </b></p>
         </div>
         
         `;
             detailsSection.appendChild(details)
 
+            const sensorsElement = document.getElementById('sensors');
+            const othersElement = document.getElementById('others');
+
+            for(const other in others) {
+                const otherSpanTag = document.createElement('span');
+                otherSpanTag.innerHTML = `${other} : ${others[other]} `;
+                othersElement.appendChild(otherSpanTag)
+                // console.log()
+                // console.log(othersElement)
+            }
+
+            for(const sensor of sensors) {
+                const sensorSpanTag = document.createElement('span');
+                sensorSpanTag.innerHTML = `${sensor}, `;
+                sensorsElement.appendChild(sensorSpanTag)
+                // console.log()
+                // console.log(sensorsElement)
+            }
+            // console.log(sensorsP);
             // console.log(result.data.brand);
         })
 }
