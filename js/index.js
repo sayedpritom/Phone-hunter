@@ -104,6 +104,7 @@ const showDetails = (slug) => {
             const storage = data.mainFeatures.storage;
             const displaySize = data.mainFeatures.displaySize;
             const chipSet = data.mainFeatures.chipSet;
+            const memory = data.mainFeatures.memory;
             const sensors = data.mainFeatures.sensors;
             const others = data.others;
 
@@ -114,13 +115,14 @@ const showDetails = (slug) => {
 
             // set data in template string
             details.innerHTML = `
-        <div class="col-12 col-md-4 my-2"><img id="detailsSectionImage" src=${image} alt=""></div> 
-        <div class="col-12 col-md-8 my-5">
+        <div class="col-12 col-md-4 my-3"><img id="detailsSectionImage" src=${image} alt=""></div> 
+        <div class="col-12 col-md-8 my-3">
             <h2>Model: ${name}</h2> <br/>
             <p><b>Release Date:</b> ${releaseDate ? releaseDate : "No release date found"}</p>
             <p><b>Storage:</b> ${storage}</p>
             <p><b>Display:</b> ${displaySize}</p>
             <p><b>Chipset:</b> ${chipSet}</p>
+            <p><b>Memory:</b> ${memory}</p>
             <p id="sensors"><b>Sensors: </b></p>
             <p id="others"><b>Others: </b></p>
         </div>
