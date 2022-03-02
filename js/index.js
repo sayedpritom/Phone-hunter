@@ -1,9 +1,9 @@
 // Spinner in search button
-const spinner = document.getElementById("spinner");
+const spinnerSearch = document.getElementById("spinnerSearch");
 
 // grab search button html element node
 document.getElementById("search-btn").addEventListener("click", () => {
-    spinner.style.display = "inline-block";
+    spinnerSearch.style.display = "inline-block";
     showAllResults()
 })
 
@@ -17,11 +17,11 @@ const showAllResults = (isTwenty = true) => {
     // convert input into lowercase for case insensitive search
     let input = document.getElementById("input").value.toLowerCase();
 
-     // grab cards html element node
+    // grab cards html element node
     const cards = document.getElementById("cards");
     cards.innerHTML = '';
 
-     // grab show All Btn Holder element node
+    // grab show All Btn Holder element node
     const showAllBtnHolder = document.getElementById("showAllBtnHolder");
 
 
@@ -67,7 +67,7 @@ const showAllResults = (isTwenty = true) => {
                 showAllBtnHolder.appendChild(showAllBtn);
 
                 // clean spinner after loading data
-                spinner.style.display = "none";
+                spinnerSearch.style.display = "none";
 
             } else {
                 // Show error message
@@ -78,7 +78,7 @@ const showAllResults = (isTwenty = true) => {
                 cards.appendChild(card)
 
                 // clean spinner after loading data
-                spinner.style.display = "none";
+                spinnerSearch.style.display = "none";
             }
         })
 
@@ -126,9 +126,9 @@ const showDetails = (slug) => {
         </div>
         
         `;
-        
-        // append data
-        detailsSection.appendChild(details)
+
+            // append data
+            detailsSection.appendChild(details)
 
             // get html nodes of sensors & others element
             const sensorsElement = document.getElementById('sensors');
@@ -147,5 +147,6 @@ const showDetails = (slug) => {
                 sensorSpanTag.innerHTML = `${sensor}, `;
                 sensorsElement.appendChild(sensorSpanTag)
             }
+
         })
 }
