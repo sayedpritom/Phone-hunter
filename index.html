@@ -13,31 +13,33 @@
 <body>
     <!-- Brand & Navbar -->
     <header>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light border-bottom ">
             <div class="container">
-                <span class="navbar-brand mb-0 h1 text-primary container text-uppercase"><h1>Phone Picker</h1></span>
+                <span class="navbar-brand mb-0 h1 text-primary container text-uppercase">
+                    <h1 class="text-white">Phone Picker</h1>
+                </span>
             </div>
         </nav>
     </header>
-    <section class="container my-5">
-        <!-- Search Box -->
-        <div class="input-group input-group-lg">
-            <input id="input" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            <div class="input-group-prepend">
-                  <button id="search-btn" class="btn btn-primary" type="button">
-                      Search
-                      <span id="spinner" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                  </button>
+        <div class="container">
+            <!-- Search Box -->
+            <div class="input-group input-group-lg my-5">
+                <input id="input" placeholder = "Search Phone By Brand" type="text" class="form-control" aria-label="Large"
+                    aria-describedby="inputGroup-sizing-sm">
+                <div class="input-group-prepend">
+                    <button id="search-btn" class="btn btn-primary" type="button">
+                        Search
+                        <span id="spinner" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
-          </div>
-          <!-- Product Details Section -->
-          <div id="detailsSection" class="my-5"></div>
+            <!-- Product Details Section -->
+            <div id="detailsSection"></div>
 
-          <!-- Cards Container Section -->
-          <div id="cards" class="row my-5 align-items-center">
-
-          </div>
-    </section>
+            <!-- Cards Container Section -->
+            <div id="cards" class="row my-5 align-items-center"></div>
+            <div id="showAllBtnHolder"></div>
+        </div>
 
     <script src="js/index.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
